@@ -283,8 +283,8 @@ This change demonstrates how proper UML relationships translate to better code d
                          ┌───────────────┐
                          │  GameLogger   │
                          └───────────────┘
-                                 ▲
-                                 │ «dependency»
+                                 │
+                                 │ «association»
                                  │
 ┌───────────┐ «composition» ┌───────────────┐
 │  Weapon   │◆───────────── │   Character   │
@@ -298,11 +298,11 @@ This change demonstrates how proper UML relationships translate to better code d
                            │   Boss    │      │
                            └───────────┘      │
                                  ▲            │
-                                 │            │
+                                 │               │
                                  │ «aggregation» │
-                                 ◇            │
-                           ┌───────────┐      │
-                           │   Game    │──────┘
+                                 ◇              │
+                           ┌───────────┐         │
+                           │   Game    │─────────┘
                            └───────────┘
 ```
 
