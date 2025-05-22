@@ -1,6 +1,5 @@
-# RPG Lesson: Object-Oriented Programming Analysis
+# RPG Lesson: Object-Oriented Programming
 
-This document provides an analysis of `rpg_oop_concepts.py` as an educational tool for teaching object-oriented programming concepts.
 
 ## COIPEA: Core OOP Concepts Demonstrated
 
