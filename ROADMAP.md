@@ -109,6 +109,89 @@ rpg_lesson/
 - Use the diagram to illustrate how the relationships are maintained across files
 - Highlight how imports represent the relationships in the UML diagram
 
+## Code Organization and Constants
+
+### Recommended Project Structure
+```
+rpg_game/
+│
+├── main.py
+├── utilities.py
+├── weapon.py
+├── character.py
+├── boss.py
+└── game.py
+```
+
+### Benefits of This Structure
+
+1. **Modularity**
+   - **Ease of Maintenance**: Each file contains a specific part of the functionality, making it easier to locate and fix bugs or make improvements.
+   - **Reusability**: Components can be easily reused in other projects or parts of the application.
+
+2. **Separation of Concerns**
+   - **Organization**: Code is divided based on responsibilities, adhering to the principle of separation of concerns.
+   - **Clarity**: Each file has a clear, single purpose, making the codebase more understandable.
+
+3. **Scalability**
+   - **Growth**: The project can grow without becoming unwieldy, with new features added to appropriate modules.
+   - **Testing**: Easier to write and maintain unit tests for isolated components.
+
+4. **Collaboration**
+   - **Team Work**: Multiple developers can work on different files simultaneously with minimal conflicts.
+   - **Version Control**: Changes are more granular and easier to track in version control.
+
+5. **Encapsulation and Abstraction**
+   - **Encapsulation**: Related data and methods are kept together, protecting data integrity.
+   - **Abstraction**: Implementation details are hidden behind clear interfaces.
+
+### Constants Management
+
+Including a `constants.py` file helps centralize configuration values:
+
+```python
+# Weapon constants
+WEAPON_ROCK_NAME = "Rock"
+WEAPON_ROCK_DAMAGE_BONUS = 2
+
+WEAPON_PAPER_NAME = "Paper"
+WEAPON_PAPER_DAMAGE_BONUS = 3
+
+WEAPON_SCISSORS_NAME = "Scissors"
+WEAPON_SCISSORS_DAMAGE_BONUS = 4
+
+# Boss constants
+BOSS_WEAPON_NAME = "Boss Weapon"
+BOSS_WEAPON_DAMAGE_BONUS = 5
+
+# Character stats
+GOBLIN_KING_NAME = "Goblin King"
+GOBLIN_KING_HEALTH = 50
+GOBLIN_KING_DAMAGE = 8
+
+DARK_SORCERER_NAME = "Dark Sorcerer"
+DARK_SORCERER_HEALTH = 60
+DARK_SORCERER_DAMAGE = 9
+
+# Player constants
+PLAYER_INITIAL_HEALTH = 110
+PLAYER_INITIAL_DAMAGE = 10
+
+# UI constants
+BORDER_LENGTH = 80
+INTRO_MESSAGE = """
+Welcome to the RPG Adventure!
+In a world where darkness looms, you are the chosen hero destined to defeat the evil bosses and restore peace.
+"""
+```
+
+**Advantages of Using constants.py**
+- **Centralized Configuration**: Single source of truth for all constant values
+- **Self-documenting**: Clearly shows what values are used throughout the application
+- **Easier Maintenance**: Update values in one place rather than searching through code
+- **Type Safety**: Constants are named meaningfully, avoiding magic numbers
+- **Environment Management**: Easier to support different configurations for different environments
+
 ## Future Enhancements
 
 - **Support multiple boss and villain types**: 
