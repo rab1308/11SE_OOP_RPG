@@ -186,7 +186,7 @@ In a world where darkness looms, you are the chosen hero destined to defeat the 
 ```
 
 **Advantages of Using constants.py**
-- **Centralized Configuration**: Single source of truth for all constant values
+- **Centralised Configuration**: Single source of truth for all constant values
 - **Self-documenting**: Clearly shows what values are used throughout the application
 - **Easier Maintenance**: Update values in one place rather than searching through code
 - **Type Safety**: Constants are named meaningfully, avoiding magic numbers
@@ -230,18 +230,18 @@ In a world where darkness looms, you are the chosen hero destined to defeat the 
   - Implement a `Sidekick` class that inherits from `Character`, allowing the player to have a companion with its own attributes and methods.
   - The `Player` class should have an attribute (e.g., `sidekick`) referencing a `Sidekick` object, demonstrating composition/association.
   - Sidekicks can be assigned weapons from the `Weapon` class or its subclasses, just like players or other characters.
-  - Create specialized sidekick subclasses (e.g., `DefenderSidekick`, `HealerSidekick`) that override methods like `defend()` or add unique abilities, making some sidekicks better at defending against villains and bosses. This demonstrates inheritance and polymorphism.
+  - Create specialised sidekick subclasses (e.g., `DefenderSidekick`, `HealerSidekick`) that override methods like `defend()` or add unique abilities, making some sidekicks better at defending against villains and bosses. This demonstrates inheritance and polymorphism.
   
   **Example:**
   ```python
   class Sidekick(Character):
       def defend(self, enemy):
-          # Default defense behavior
+          # Default defence behaviour
           pass
 
   class DefenderSidekick(Sidekick):
       def defend(self, enemy):
-          # Enhanced defense logic
+          # Enhanced defence logic
           pass
   
   player = Player("Hero", 100, 10)
@@ -249,7 +249,7 @@ In a world where darkness looms, you are the chosen hero destined to defeat the 
   sidekick.weapon = Weapon("Shield", 3)
   player.sidekick = sidekick
   ```
-  - Update documentation and UML diagrams to show the new Sidekick class, its relationship with Player, and its specialized subclasses.
+  - Update documentation and UML diagrams to show the new Sidekick class, its relationship with Player, and its specialised subclasses.
 
   - Create subclasses of `Weapon` (e.g., `Rock`, `Paper`, `Scissors`) and override a method (such as `use()` or `attack()`) in each subclass to implement unique behavior. This will explicitly show method overriding and polymorphism in action.
   
@@ -257,22 +257,22 @@ In a world where darkness looms, you are the chosen hero destined to defeat the 
   ```python
   class Weapon:
       def use(self, target):
-          # Default weapon behavior
+          # Default weapon behaviour
           pass
 
   class Rock(Weapon):
       def use(self, target):
-          # Rock-specific behavior
+          # Rock-specific behaviour
           pass
 
   class Paper(Weapon):
       def use(self, target):
-          # Paper-specific behavior
+          # Paper-specific behaviour
           pass
 
   class Scissors(Weapon):
       def use(self, target):
-          # Scissors-specific behavior
+          # Scissors-specific behaviour
           pass
   ```
   - Update documentation and UML diagrams to highlight this use of polymorphism.
@@ -311,8 +311,8 @@ In a world where darkness looms, you are the chosen hero destined to defeat the 
 
 ## Teaching Approach
 
-1. Start with the single-file version (`lesson1.py`)
-2. Introduce the concept of code organization and modularity
+1. Start with the single-file version (`rpg_oop_concepts.py`)
+2. Introduce the concept of code organisation and modularity
 3. Walk through the refactoring process step by step
-4. Discuss the benefits and challenges of multi-file organization
+4. Discuss the benefits and challenges of multi-file organisation
 5. Use this as an opportunity to reinforce OOP concepts in a more realistic context
