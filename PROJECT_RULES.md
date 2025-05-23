@@ -52,20 +52,11 @@ For more information, refer to:
 
 ## 2. File Organization
 
-Organize code into these folders:
+Keep the implementation simple with a single file:
 
-```
-rpg_game/
-├── main.py          # Game entry point
-├── character.py     # Character class and related code
-├── items.py         # Weapons, armor, etc.
-├── game_mechanics/  # Game rules and logic
-│   ├── combat.py
-│   └── levels.py
-└── utils/           # Helper functions
-    ├── display.py
-    └── input_handling.py
-```
+- `rpg_oop_concepts.py` - Contains all game logic and classes
+- Keep related code together in logical sections
+- Use clear section comments to separate different components
 
 ## 3. Git Basics
 

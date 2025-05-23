@@ -1,103 +1,79 @@
-# RPG Lesson: Roadmap for Multi-File Version
+# RPG Lesson: Development Roadmap
 
-This roadmap outlines a plan for evolving the single-file `rpg_oop_concepts.py` into a properly structured multi-file Python package. This progression serves as an educational tool to demonstrate proper code organization and modularity in object-oriented programming.
+This document outlines the development plan for the RPG OOP demonstration project, focusing on a single-file implementation that clearly demonstrates object-oriented programming concepts.
 
 ## Educational Goals
 
-1. Demonstrate proper Python package structure
-2. Show how classes and their relationships are maintained across files
-3. Teach import management and dependency handling
-4. Illustrate how larger projects are organized
-5. Reinforce OOP concepts in a more realistic development context
+1. Demonstrate core OOP concepts in a single, easy-to-understand file
+2. Show class relationships (inheritance, composition, association)
+3. Illustrate proper code organization within a single file
+4. Provide clear examples of OOP principles in practice
 
-## Proposed File Structure
+## Implementation Approach
 
-```
-rpg_lesson/
-├── README.md                  # Project documentation
-├── ROADMAP.md                 # This roadmap file
-├── rpg_oop_concepts.py        # Original single-file version
-├── rpg_oop_modular/           # Multi-file version
-│   ├── __init__.py            # Makes the directory a package
-│   ├── main.py                # Entry point with if __name__ == "__main__"
-│   ├── game.py                # Game class definition
-│   ├── models/                # Game entities
-│   │   ├── __init__.py        # Makes models a subpackage
-│   │   ├── character.py       # Character class
-│   │   ├── boss.py            # Boss class (inherits from Character)
-│   │   └── weapon.py          # Weapon class
-│   └── utils/                 # Utility functions and classes
-│       ├── __init__.py        # Makes utils a subpackage
-│       ├── console.py         # Console utility functions
-│       └── logger.py          # GameLogger class
-```
+The project maintains a single Python file (`rpg_oop_concepts.py`) that contains all necessary components, organized into logical sections:
+
+1. **Utility Functions** - Helper functions at the top
+2. **Core Classes** - Game entities (Character, Boss, Weapon)
+3. **Game Logic** - Main game loop and state management
+4. **Main Execution** - Entry point at the bottom
+
+This approach keeps the demonstration focused and easy to follow while still demonstrating professional coding practices.
 
 ## Implementation Steps
 
-### 1. Create Package Structure
+### 1. Organize Code Structure
+- Group related functions and classes together with clear section comments
+- Place utility functions at the top of the file
+- Follow with core class definitions (Weapon, Character, Boss)
+- Include the Game class for managing the game loop
+- Keep the main execution block at the bottom
 
-- Create the directory structure as outlined above
-- Add empty `__init__.py` files to make directories into packages
+### 2. Improve Code Quality
+- Add comprehensive docstrings to all classes and methods
+- Ensure consistent code style throughout the file
+- Add type hints for better code clarity
+- Include error handling where appropriate
 
-### 2. Extract Utility Functions (utils/)
+### 3. Enhance Documentation
+- Document the purpose of each section
+- Add comments explaining complex logic
+- Include usage examples in docstrings
+- Keep the README.md updated with usage instructions
 
-- Move `clear_screen()`, `press_enter()`, and `print_border()` to `utils/console.py`
-- Move `GameLogger` class to `utils/logger.py`
-- Ensure proper imports in the `__init__.py` files for easy access
+### 4. Testing and Validation
+- Test all game features thoroughly
+- Verify that all OOP concepts work as expected
+- Check for and fix any bugs or edge cases
+- Ensure the game is user-friendly and provides clear feedback
 
-### 3. Extract Game Entities (models/)
+## Educational Notes
 
-- Move `Weapon` class to `models/weapon.py`
-- Move `Character` class to `models/character.py`
-  - Add import for `Weapon` and `GameLogger`
-- Move `Boss` class to `models/boss.py`
-  - Add import for `Character` and `GameLogger`
-- Update `__init__.py` to expose these classes
+### Utility Functions Section
+- Demonstrates basic Python functions for console operations
+- Shows platform-specific code handling (Windows vs Unix)
+- Illustrates simple, reusable functions
 
-### 4. Extract Game Logic (game.py)
+### Weapon Class
+- Shows a simple class with attributes and minimal methods
+- Demonstrates composition (used by Character class)
+- Illustrates a basic data structure
 
-- Move `Game` class to `game.py`
-- Add imports for all required classes and utilities
+### Character Class
+- Demonstrates encapsulation with private attributes and getters/setters
+- Shows composition by containing a Weapon object
+- Illustrates class methods and instance variables
 
-### 5. Create Entry Point (main.py)
+### Boss Class
+- Demonstrates inheritance by extending Character
+- Shows method overriding with `attack()`
+- Illustrates the use of `super()` to call parent class methods
 
-- Create `main.py` with the code from the original `if __name__ == "__main__"` block
-- Import the `Game` class
-
-### 6. Test and Debug
-
-- Ensure all imports are correct
-- Test the application to verify it works as expected
-- Fix any issues that arise
-
-## Educational Notes for Each File
-
-### models/weapon.py
-- Demonstrates a simple class with minimal dependencies
-- Shows how to create a class that will be composed within another class
-
-### models/character.py
-- Shows importing a class (`Weapon`) for composition
-- Demonstrates dependency on a utility class (`GameLogger`)
-- Illustrates a class with both attributes and methods
-
-### models/boss.py
-- Demonstrates inheritance by importing the parent class
-- Shows how to extend functionality through method overriding
-- Illustrates the `super()` function for parent class method calls
-
-### utils/logger.py
-- Shows a utility class with static methods
-- Demonstrates separation of concerns
-
-### utils/console.py
-- Shows grouping related utility functions
-- Demonstrates platform-specific code handling
-
-### game.py
-- Demonstrates a complex class that orchestrates other classes
-- Shows importing multiple dependencies
-- Illustrates a class that manages game state and flow
+### Game Class
+- Manages the main game loop and state
+- Coordinates between different game entities
+- Handles user input and game flow
+- Demonstrates object interaction and state management
 
 ### main.py
 - Shows a clean entry point
@@ -175,72 +151,45 @@ DARK_SORCERER_DAMAGE = 9
 
 # Player constants
 PLAYER_INITIAL_HEALTH = 110
-PLAYER_INITIAL_DAMAGE = 10
-
-# UI constants
-BORDER_LENGTH = 80
-INTRO_MESSAGE = """
-Welcome to the RPG Adventure!
-In a world where darkness looms, you are the chosen hero destined to defeat the evil bosses and restore peace.
-"""
-```
-
-**Advantages of Using constants.py**
-- **Centralised Configuration**: Single source of truth for all constant values
-- **Self-documenting**: Clearly shows what values are used throughout the application
-- **Easier Maintenance**: Update values in one place rather than searching through code
-- **Type Safety**: Constants are named meaningfully, avoiding magic numbers
-- **Environment Management**: Easier to support different configurations for different environments
 
 ## Future Enhancements
 
-- **Support multiple boss and villain types**: 
+### 1. Game Features
+- **Add an Inventory System**:
+  - Track items and equipment for characters
+  - Manage weapons, armor, and consumables
 
-- **Demonstrate polymorphism with weapons**:
+- **Expand Character Types**:
+  - Add `Sidekick` and `Villain` classes
+  - Implement unique abilities and behaviors
 
-- **Add a Sidekick for the player**:
+- **Game Progression**:
+  - Add experience points and leveling
+  - Implement a simple quest system
 
-- **Implement an Inventory class for characters**:
-  - Create an `Inventory` class to manage items (e.g., weapons, potions) with methods like `add_item()`, `remove_item()`, and `list_items()`.
-  - Add an `inventory` attribute to the `Character` class so all characters (Player, Sidekick, Boss, Villain, etc.) can have and manage their own inventory.
-  - This design uses **composition** (a character "has an" inventory), **encapsulation** (inventory logic is managed in its own class), and **reusability** (any character type can use the inventory).
-  
-  **Example:**
-  ```python
-  class Inventory:
-      def __init__(self):
-          self.items = []
-      def add_item(self, item):
-          self.items.append(item)
-      def remove_item(self, item):
-          self.items.remove(item)
-      def list_items(self):
-          return self.items
+### 2. Code Quality
+- **Add Type Hints**:
+  - Improve code clarity and IDE support
+  - Catch potential type-related bugs early
 
-  class Character:
-      def __init__(self, ...):
-          # ... existing attributes ...
-          self.inventory = Inventory()
+- **Enhance Error Handling**:
+  - Add input validation
+  - Provide clear error messages
+  - Handle edge cases gracefully
 
-  player.inventory.add_item(Weapon("Sword", 10))
-  sidekick.inventory.add_item(Weapon("Shield", 3))
-  ```
-  - Update documentation and UML diagrams to show the Inventory class and its relationship to Character and subclasses.
+### 3. Testing
+- **Unit Tests**:
+  - Test individual classes and methods
+  - Ensure consistent behavior
 
-  - Implement a `Sidekick` class that inherits from `Character`, allowing the player to have a companion with its own attributes and methods.
-  - The `Player` class should have an attribute (e.g., `sidekick`) referencing a `Sidekick` object, demonstrating composition/association.
-  - Sidekicks can be assigned weapons from the `Weapon` class or its subclasses, just like players or other characters.
-  - Create specialised sidekick subclasses (e.g., `DefenderSidekick`, `HealerSidekick`) that override methods like `defend()` or add unique abilities, making some sidekicks better at defending against villains and bosses. This demonstrates inheritance and polymorphism.
-  
-  **Example:**
-  ```python
-  class Sidekick(Character):
-      def defend(self, enemy):
-          # Default defence behaviour
-          pass
+- **Integration Tests**:
+  - Test game flow and interactions
+  - Verify win/lose conditions
 
-  class DefenderSidekick(Sidekick):
-      def defend(self, enemy):
+### 4. Documentation
+- **Code Comments**:
+  - Add explanatory comments for complex logic
+  - Document design decisions
           # Enhanced defence logic
           pass
   

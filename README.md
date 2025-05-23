@@ -3,15 +3,12 @@
 
 ## Project Structure
 
-The project follows a modular structure to demonstrate proper code organization:
+This is a single-file implementation demonstrating OOP concepts in Python:
 
-```
-rpg_lesson/
-├── README.md                  # Project documentation
-├── ROADMAP.md                 # Development roadmap
-├── rpg_oop_concepts.py        # Current single-file implementation
-└── UML_class_diagram.md       # UML documentation
-```
+- `rpg_oop_concepts.py` - Main game implementation
+- `README.md` - Project documentation
+- `ROADMAP.md` - Development plans
+- `UML_class_diagram.md` - Class structure and relationships
 
 ## COIPEA: Core OOP Concepts Demonstrated
 
