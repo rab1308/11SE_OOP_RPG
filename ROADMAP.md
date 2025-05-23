@@ -298,7 +298,7 @@ In a world where darkness looms, you are the chosen hero destined to defeat the 
 3. **Additional Entities**: Add more character types, weapons, etc.
 4. **Unit Tests**: Add a `tests/` directory with unit tests for each class
 
-## Teaching Approach
+## Learning Approach
 
 1. Start with the single-file version (`rpg_oop_concepts.py`)
 2. Introduce the concept of code organisation and modularity
