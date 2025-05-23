@@ -1,65 +1,54 @@
-# RPG Lesson: Roadmap for Multi-File Version
+# RPG Lesson: Simple File Structure
 
-This roadmap outlines a plan for evolving the single-file `rpg_oop_concepts.py` into a properly structured multi-file Python package. This progression serves as an educational tool to demonstrate proper code organization and modularity in object-oriented programming.
+This document outlines a clean, simple file structure for organizing the RPG game code without using Python packages. This approach keeps the project straightforward while maintaining good code organization.
 
-## Educational Goals
+## Goals
 
-1. Demonstrate proper Python package structure
-2. Show how classes and their relationships are maintained across files
-3. Teach import management and dependency handling
-4. Illustrate how larger projects are organized
-5. Reinforce OOP concepts in a more realistic development context
+1. Keep the code organized in a simple, flat structure
+2. Maintain clear separation of concerns
+3. Make it easy to understand and modify
+4. Focus on demonstrating OOP concepts
 
 ## Proposed File Structure
 
 ```
-rpg_lesson/
-├── README.md                  # Project documentation
-├── ROADMAP.md                 # This roadmap file
-├── rpg_oop_concepts.py        # Original single-file version
-├── rpg_oop_modular/           # Multi-file version
-│   ├── __init__.py            # Makes the directory a package
-│   ├── main.py                # Entry point with if __name__ == "__main__"
-│   ├── game.py                # Game class definition
-│   ├── models/                # Game entities
-│   │   ├── __init__.py        # Makes models a subpackage
-│   │   ├── character.py       # Character class
-│   │   ├── boss.py            # Boss class (inherits from Character)
-│   │   └── weapon.py          # Weapon class
-│   └── utils/                 # Utility functions and classes
-│       ├── __init__.py        # Makes utils a subpackage
-│       ├── console.py         # Console utility functions
-│       └── logger.py          # GameLogger class
+rpg_game/
+├── README.md           # Project documentation
+├── main.py             # Entry point with if __name__ == "__main__"
+├── game.py             # Game class definition
+├── character.py        # Character class
+├── boss.py             # Boss class (inherits from Character)
+├── weapon.py           # Weapon class
+├── game_logger.py      # GameLogger class
+└── console_utils.py    # Console utility functions
 ```
 
 ## Implementation Steps
 
-### 1. Create Package Structure
+### 1. Create File Structure
 
-- Create the directory structure as outlined above
-- Add empty `__init__.py` files to make directories into packages
+- Create the files as outlined above
+- No need for `__init__.py` files or package structure
 
-### 2. Extract Utility Functions (utils/)
+### 2. Extract Utility Functions
 
-- Move `clear_screen()`, `press_enter()`, and `print_border()` to `utils/console.py`
-- Move `GameLogger` class to `utils/logger.py`
-- Ensure proper imports in the `__init__.py` files for easy access
+- Move `clear_screen()`, `press_enter()`, and `print_border()` to `console_utils.py`
+- Move `GameLogger` class to `game_logger.py`
 
-### 3. Extract Game Entities (models/)
+### 3. Extract Game Entities
 
-- Move `Weapon` class to `models/weapon.py`
-- Move `Character` class to `models/character.py`
+- Move `Weapon` class to `weapon.py`
+- Move `Character` class to `character.py`
   - Add import for `Weapon` and `GameLogger`
-- Move `Boss` class to `models/boss.py`
-  - Add import for `Character` and `GameLogger`
-- Update `__init__.py` to expose these classes
+- Move `Boss` class to `boss.py`
+  - Add import for `Character`
 
-### 4. Extract Game Logic (game.py)
+### 4. Extract Game Logic
 
 - Move `Game` class to `game.py`
 - Add imports for all required classes and utilities
 
-### 5. Create Entry Point (main.py)
+### 5. Create Entry Point
 
 - Create `main.py` with the code from the original `if __name__ == "__main__"` block
 - Import the `Game` class
