@@ -23,18 +23,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed long lines to comply with PEP 8 (88 character limit)
 - Eliminated magic numbers and hardcoded strings
 
-## [2025-05-26]
+## [2025-05-26] - Major Restructuring
+
+### Milestone: Multi-File RPG Implementation
+This update represents a significant milestone in the project's evolution, transforming the codebase from a single-file implementation to a well-organised, modular multi-file structure. This new structure better demonstrates professional software design while maintaining educational clarity.
+
+### Added
+- Created dedicated files for each major component:
+  - `game.py` - Core game logic and flow management
+  - `character.py` - Character and Boss class implementations
+  - `weapon.py` - Weapon system implementation
+  - `constants.py` - Game configuration and constants
+  - `utils/logger.py` - Logging functionality
+  - `utils/console.py` - Console interface utilities
+- Implemented a clean entry point via `main.py`
 
 ### Changed
-- Simplified project structure by removing package architecture
+- Transformed from single-file to multi-file architecture while preserving OOP principles
+- Simplified project structure by removing unnecessary package architecture
 - Removed `__init__.py` files to make the project a standard Python project
 - Modified import statements to work without package structure
 - Renamed `PROJECT_RULES.md` to `RULES.md` for better consistency
 - Updated documentation to emphasise educational focus
+- Enhanced code organisation with logical separation of concerns
 
 ### Removed
 - Deleted `setup.py` and package installation files
 - Removed `run_game.py` in favour of using `rpg_game/main.py` directly
+- Eliminated unnecessary complexity that could distract from learning objectives
 
 ### Commit Reference
 - Commit [0ff49c9](https://github.com/Mr-Zamora/11SE_OOP_RPG/commit/0ff49c9) - "refactor: simplify project structure for educational use"
