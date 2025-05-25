@@ -29,11 +29,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Simplified project structure by removing package architecture
 - Removed `__init__.py` files to make the project a standard Python project
 - Modified import statements to work without package structure
-- Renamed `project_rules.md` to `RULES.md` for better consistency
+- Renamed `PROJECT_RULES.md` to `RULES.md` for better consistency
+- Updated documentation to emphasise educational focus
 
 ### Removed
 - Deleted `setup.py` and package installation files
-- Removed `run_game.py` in favor of using `rpg_game/main.py` directly
+- Removed `run_game.py` in favour of using `rpg_game/main.py` directly
+
+### Commit Reference
+- Commit [0ff49c9](https://github.com/Mr-Zamora/11SE_OOP_RPG/commit/0ff49c9) - "refactor: simplify project structure for educational use"
 
 ## [Unreleased]
 
