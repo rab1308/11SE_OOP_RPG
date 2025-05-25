@@ -54,6 +54,12 @@ This update represents a significant milestone in the project's evolution, trans
 
 ### Commit Reference
 - Commit [0ff49c9](https://github.com/Mr-Zamora/11SE_OOP_RPG/commit/0ff49c9) - "refactor: simplify project structure for educational use"
+- Commit [884340c](https://github.com/Mr-Zamora/11SE_OOP_RPG/commit/884340c) - "chore: remove __pycache__ directories and add .gitignore"
+
+### Maintenance
+- Removed Python bytecode files (`__pycache__` directories) from version control
+- Added comprehensive `.gitignore` file to prevent tracking of generated files
+- Improved repository cleanliness and adherence to Python project standards
 
 ## [Unreleased]
 
